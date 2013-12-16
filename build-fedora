@@ -28,6 +28,5 @@ if [[ $? != 0 ]]; then
     exit 1
 fi
 
-# sudo yum install -y libguestfs-tools
 sudo virt-sysprep --no-selinux-relabel -a /var/lib/libvirt/images/$BUILD_NAME.img
 sudo virt-sparsify --convert qcow2 --compress /var/lib/libvirt/images/$BUILD_NAME.img $BUILD_NAME.qcow2

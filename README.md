@@ -15,12 +15,12 @@ Requirements
   * Ubuntu
 
     ```
-    sudo apt-get install virtinst
+    sudo apt-get install virtinst libguestfs-tools
     ```
   * CentOS
 
     ```
-    sudo yum install libvirt python-virtinst qemu-kvm
+    sudo yum install libvirt python-virtinst qemu-kvm libguestfs-tools
     sudo /etc/init.d/libvirtd start
     ```
 

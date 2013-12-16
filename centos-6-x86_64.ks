@@ -72,6 +72,10 @@ cloud-init
 # Cleanup after yum
 yum clean all
 
+# disable zeroconf to avoid adding of route to 169.254.169.254
+# this route caused that VM is not able to fetch metadata
+echo "NOZEROCONF=yes" >> /etc/sysconfig/network
+
 # Rename the default cloud-init user to 'centos'
 
 # cloud-init 0.6 config format
@@ -148,5 +152,10 @@ echo "savedefault --default=1 --once" | grub --batch
 
 # Leave behind a build stamp
 echo "build=$(date +%F.%T)" >/etc/.build
+
+# Remove udev net entries
+sed -i '/ENV{MATCHADDR}="$attr{address}"$/a\ENV{MATCHADDR}=="fa:16:3e:*", GOTO="persistent_net_generator_end"' /lib/udev/rules.d/75-persistent-net-generator.rules
+sed -i '/HWADDR/d' /etc/sysconfig/network-scripts/ifcfg-eth0
+sed -i '/UUID/d' /etc/sysconfig/network-scripts/ifcfg-eth0
 
 %end
