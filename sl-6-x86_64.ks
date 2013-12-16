@@ -73,13 +73,13 @@ yum clean all
 # Rename the default cloud-init user to 'centos'
 
 # cloud-init 0.6 config format
-#sed -i 's/^user: ec2-user/user: centos/g' /etc/cloud/cloud.cfg
+#sed -i 's/^user: ec2-user/user: sl-user/g' /etc/cloud/cloud.cfg
 
 # cloud-init 0.7 config format
-#sed -i 's/ name: cloud-user/ name: centos/g' /etc/cloud/cloud.cfg
-sed -i 's/name: cloud-user/name: centos\
+#sed -i 's/ name: cloud-user/ name: sl-user/g' /etc/cloud/cloud.cfg
+sed -i 's/name: cloud-user/name: sl-user\
     lock_passwd: True\
-    gecos: CentOS\
+    gecos: Scientific Linux\
     groups: \[adm, audio, cdrom, dialout, floppy, video, dip\]\
     sudo: \[\"ALL=(ALL) NOPASSWD:ALL\"\]\
     shell: \/bin\/bash/' /etc/cloud/cloud.cfg

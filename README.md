@@ -1,6 +1,8 @@
 image-recipes
 =============
 
+This is a fork of [dtroyer/image-recipes](https://github.com/dtroyer/image-recipes)
+
 Kickstart files and scripts for building minimal VM images.
 
 Features
@@ -23,3 +25,8 @@ CentOS
 * EPEL repo is enabled
 * login name is 'centos'
 * postfix is installed (prereq for cronie) but not enabled
+
+Scientific Linux
+----------------
+* EPEL repo is enabled
+* login name is 'sl-user'
