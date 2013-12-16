@@ -5,6 +5,23 @@ This is a fork of [dtroyer/image-recipes](https://github.com/dtroyer/image-recip
 
 Kickstart files and scripts for building minimal VM images.
 
+How to
+------
+Here's the link about how-to --> [A CentOS 6 Image for OpenStack](http://hackstack.org/x/blog/2013/04/25/a-centos-6-image-for-openstack/).
+
+Requirements
+------------
+* Install virt-install and all its prerequisites
+  * Ubuntu
+    ```
+    sudo apt-get install virtinst
+    ```
+  * CentOS
+    ```
+    sudo yum install libvirt python-virtinst qemu-kvm
+    sudo /etc/init.d/libvirtd start
+    ```
+
 Features
 --------
 
