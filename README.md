@@ -13,10 +13,12 @@ Requirements
 ------------
 * Install virt-install and all its prerequisites
   * Ubuntu
+
     ```
     sudo apt-get install virtinst
     ```
   * CentOS
+
     ```
     sudo yum install libvirt python-virtinst qemu-kvm
     sudo /etc/init.d/libvirtd start
